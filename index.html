@@ -4,10 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GetByeBye - Digital Safety First</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            color: #666;
+        }
+        .cta {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #ff5733;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .cta:hover {
+            background-color: #e04e2c;
+        }
+    </style>
 </head>
 <body>
+
     <h1>Welcome to GetByeBye</h1>
-    <p>Your privacy matters. We're building tools to detect and remove stalkerware.</p>
-    <p>Check back soon for updates.</p>
+    <p>Protect your digital privacy. Learn how to detect and remove stalkerware from your phone.</p>
+
+    <button class="cta" onclick="document.getElementById('email-form').scrollIntoView();">
+        Get Updates
+    </button>
+
+    <div id="email-form" style="margin-top: 40px;">
+        <h2>Stay Updated</h2>
+        <p>Enter your email to receive important security tips and updates.</p>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+            <input type="email" name="email" placeholder="Your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
 </body>
 </html>
