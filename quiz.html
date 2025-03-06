@@ -62,28 +62,33 @@
     <p class="result" id="result"></p>
     
     <script>
-        function calculateScore() {
-            let score = 0;
-            const totalQuestions = 5;
-            
-            for (let i = 1; i <= totalQuestions; i++) {
-                const answer = document.querySelector(`input[name="q${i}"]:checked`);
-                if (answer && answer.value === "yes") {
-                    score++;
-                }
+    function calculateScore() {
+        let score = 0;
+        const totalQuestions = 5;
+
+        for (let i = 1; i <= totalQuestions; i++) {
+            const answer = document.querySelector(`input[name="q${i}"]:checked`);
+            if (answer && answer.value === "yes") {
+                score++;
             }
-            
-            let resultText = "";
-            if (score === 0) {
-                resultText = "✅ Low Risk - Your phone seems secure.";
-            } else if (score <= 2) {
-                resultText = "⚠️ Medium Risk - Check your settings for unusual activity.";
-            } else {
-                resultText = "🚨 High Risk - You may be tracked. Take immediate action!";
-            }
-            
-            document.getElementById("result").innerText = resultText;
         }
+
+        let resultText = "";
+        let resultLink = "";
+
+        if (score === 0) {
+            resultText = "✅ Low Risk - Your phone seems secure.";
+            resultLink = '<a href="low-risk.html" class="btn">Read More</a>';
+        } else if (score <= 2) {
+            resultText = "⚠️ Medium Risk - Check your settings for unusual activity.";
+            resultLink = '<a href="medium-risk.html" class="btn">Read More</a>';
+        } else {
+            resultText = "🚨 High Risk - You may be tracked. Take immediate action!";
+            resultLink = '<a href="high-risk.html" class="btn">Read More</a>';
+        }
+
+        document.getElementById("result").innerHTML = resultText + "<br><br>" + resultLink;
+    }
     </script>
 </body>
 </html>
