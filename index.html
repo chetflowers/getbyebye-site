@@ -10,25 +10,30 @@
             text-align: center;
             margin: 40px;
             padding: 20px;
+            background-color: #121212;
+            color: #fff;
         }
         h1 {
-            color: #333;
+            color: #0f0;
         }
         p {
             font-size: 18px;
-            color: #666;
+            color: #ff00ff;
         }
-        .cta {
-            margin-top: 20px;
-            padding: 10px 20px;
+        .btn {
+            display: inline-block;
+            margin: 20px;
+            padding: 12px 24px;
             font-size: 18px;
-            background-color: #ff5733;
-            color: white;
-            border: none;
+            border: 2px solid #0f0;
+            background-color: transparent;
+            color: #0f0;
             cursor: pointer;
+            transition: all 0.3s;
         }
-        .cta:hover {
-            background-color: #e04e2c;
+        .btn:hover {
+            background-color: #0f0;
+            color: #121212;
         }
     </style>
 </head>
@@ -37,33 +42,24 @@
     <h1>Welcome to GetByeBye</h1>
     <p>Protect your digital privacy. Learn how to detect and remove stalkerware from your phone.</p>
 
-    <button class="cta" id="scrollToForm">
-    Get Updates
-    </button>
-
-    <div style="margin-top: 20px;">
-    <a href="quiz.html">
-        <button class="cta">Take the "Am I Being Tracked?" Quiz</button>
-    </a>
-    </div>
+    <button class="btn" id="scrollToForm">Get Updates</button>
+    <a href="quiz.html" class="btn">Take the "Am I Being Tracked?" Quiz</a>
 
     <div id="email-form" style="margin-top: 40px;">
-        <h2>Stay Updated</h2>
+        <h2 style="color:#0f0;">Stay Updated</h2>
         <p>Enter your email to receive important security tips and updates.</p>
         <form action="https://formspree.io/f/mldjrdwk" method="POST">
             <input type="hidden" name="_captcha" value="false">
             <input type="email" name="email" placeholder="Your email" required>
-            <button type="submit">Subscribe</button>
+            <button type="submit" class="btn">Subscribe</button>
         </form>
     </div>
 
     <script>
-    document.getElementById("scrollToForm").addEventListener("click", function() {
-        document.getElementById("email-form").scrollIntoView({ behavior: "smooth" });
-    });
+        document.getElementById("scrollToForm").addEventListener("click", function() {
+            document.getElementById("email-form").scrollIntoView({ behavior: "smooth" });
+        });
     </script>
 
 </body>
 </html>
-
-<!-- Updated to fix duplicate button issue -->
