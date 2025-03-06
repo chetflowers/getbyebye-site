@@ -8,16 +8,34 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 40px;
+            background-color: #121212;
+            color: #fff;
             padding: 20px;
+        }
+        h1 {
+            color: #0f0;
+        }
+        p {
+            font-size: 18px;
+            color: #ff1493;
         }
         .question {
             margin-bottom: 20px;
         }
-        .result {
-            font-weight: bold;
-            font-size: 20px;
-            margin-top: 20px;
+        .btn {
+            display: inline-block;
+            margin: 20px;
+            padding: 12px 24px;
+            font-size: 18px;
+            border: 2px solid #0f0;
+            background-color: transparent;
+            color: #0f0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background-color: #0f0;
+            color: #121212;
         }
     </style>
 </head>
@@ -56,7 +74,7 @@
             <input type="radio" name="q5" value="no"> No
         </div>
         
-        <button type="button" onclick="calculateScore()">Submit</button>
+        <button type="button" class="btn" onclick="calculateScore()">Submit</button>
     </form>
     
     <p class="result" id="result"></p>
