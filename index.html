@@ -18,7 +18,7 @@
         }
         p {
             font-size: 18px;
-            color: #ff00ff;
+            color: #ff1493;
         }
         .btn {
             display: inline-block;
@@ -43,7 +43,7 @@
     <p>Protect your digital privacy. Learn how to detect and remove stalkerware from your phone.</p>
 
     <button class="btn" id="scrollToForm">Get Updates</button>
-    <a href="quiz.html" class="btn">Take the "Am I Being Tracked?" Quiz</a>
+    <a href="quiz.html" class="btn" style="text-decoration: none;">Take the "Am I Being Tracked?" Quiz</a>
 
     <div id="email-form" style="margin-top: 40px;">
         <h2 style="color:#0f0;">Stay Updated</h2>
@@ -57,7 +57,8 @@
 
     <script>
         document.getElementById("scrollToForm").addEventListener("click", function() {
-            document.getElementById("email-form").scrollIntoView({ behavior: "smooth" });
+            document.getElementById("email-form").scrollIntoView({ behavior: "smooth", block: "center" });
+        });
         });
     </script>
 
