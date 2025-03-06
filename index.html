@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Am I Being Tracked? - Quiz</title>
+    <title>GetByeBye - Digital Safety First</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,73 +37,19 @@
     </style>
 </head>
 <body>
-    <h1>Am I Being Tracked? - Security Quiz</h1>
-    <p>Answer these questions to assess your risk of being tracked.</p>
-    
-    <form id="quiz-form">
-        <div class="question">
-            <p>1. Has your phone’s battery started draining much faster than usual?</p>
-            <input type="radio" name="q1" value="yes"> Yes
-            <input type="radio" name="q1" value="no"> No
-        </div>
+    <h1>Welcome to GetByeBye</h1>
+    <p>Protect your digital privacy. Learn how to detect and remove stalkerware from your phone.</p>
 
-        <div class="question">
-            <p>2. Do you hear strange noises or echoes during phone calls?</p>
-            <input type="radio" name="q2" value="yes"> Yes
-            <input type="radio" name="q2" value="no"> No
-        </div>
-        
-        <div class="question">
-            <p>3. Have you noticed unknown apps installed on your phone?</p>
-            <input type="radio" name="q3" value="yes"> Yes
-            <input type="radio" name="q3" value="no"> No
-        </div>
-        
-        <div class="question">
-            <p>4. Does your phone feel warm even when not in use?</p>
-            <input type="radio" name="q4" value="yes"> Yes
-            <input type="radio" name="q4" value="no"> No
-        </div>
-        
-        <div class="question">
-            <p>5. Have you found settings changed that you didn’t modify?</p>
-            <input type="radio" name="q5" value="yes"> Yes
-            <input type="radio" name="q5" value="no"> No
-        </div>
-        
-        <button type="button" class="btn" onclick="calculateScore()">Submit</button>
-    </form>
-    
-    <p class="result" id="result"></p>
-    
-    <script>
-        function calculateScore() {
-            let score = 0;
-            const totalQuestions = 5;
-            
-            for (let i = 1; i <= totalQuestions; i++) {
-                const answer = document.querySelector(`input[name="q${i}"]:checked`);
-                if (answer && answer.value === "yes") {
-                    score++;
-                }
-            }
-            
-            let resultText = "";
-            let resultLink = "";
-            
-            if (score === 0) {
-                resultText = "✅ Low Risk - Your phone seems secure.";
-                resultLink = '<a href="low-risk.html" class="btn">Read More</a>';
-            } else if (score <= 2) {
-                resultText = "⚠️ Medium Risk - Check your settings for unusual activity.";
-                resultLink = '<a href="medium-risk.html" class="btn">Read More</a>';
-            } else {
-                resultText = "🚨 High Risk - You may be tracked. Take immediate action!";
-                resultLink = '<a href="high-risk.html" class="btn">Read More</a>';
-            }
-            
-            document.getElementById("result").innerHTML = resultText + "<br><br>" + resultLink;
-        }
-    </script>
+    <a href="quiz.html" class="btn">Take the "Am I Being Tracked?" Quiz</a>
+
+    <div id="email-form" style="margin-top: 40px;">
+        <h2 style="color:#0f0;">Stay Updated</h2>
+        <p>Enter your email to receive important security tips and updates.</p>
+        <form action="https://formspree.io/f/mldjrdwk" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="email" name="email" placeholder="Your email" required>
+            <button type="submit" class="btn">Subscribe</button>
+        </form>
+    </div>
 </body>
 </html>
