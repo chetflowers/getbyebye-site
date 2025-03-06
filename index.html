@@ -37,8 +37,8 @@
     <h1>Welcome to GetByeBye</h1>
     <p>Protect your digital privacy. Learn how to detect and remove stalkerware from your phone.</p>
 
-    <button class="cta" onclick="document.getElementById('email-form').scrollIntoView();">
-        Get Updates
+    <button class="cta" id="scrollToForm">
+    Get Updates
     </button>
 
     <div style="margin-top: 20px;">
@@ -56,6 +56,12 @@
             <button type="submit">Subscribe</button>
         </form>
     </div>
+
+    <script>
+    document.getElementById("scrollToForm").addEventListener("click", function() {
+        document.getElementById("email-form").scrollIntoView({ behavior: "smooth" });
+    });
+    </script>
 
 </body>
 </html>
